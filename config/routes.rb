@@ -1,56 +1,25 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  root :to => 'actions#index'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :actions
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  resources :volunteers
 end
+
+# root GET    /                              actions#index
+#        actions GET    /actions(.:format)             actions#index
+#                POST   /actions(.:format)             actions#create
+#     new_action GET    /actions/new(.:format)         actions#new
+#    edit_action GET    /actions/:id/edit(.:format)    actions#edit
+#         action GET    /actions/:id(.:format)         actions#show
+#                PATCH  /actions/:id(.:format)         actions#update
+#                PUT    /actions/:id(.:format)         actions#update
+#                DELETE /actions/:id(.:format)         actions#destroy
+#     volunteers GET    /volunteers(.:format)          volunteers#index
+#                POST   /volunteers(.:format)          volunteers#create
+#  new_volunteer GET    /volunteers/new(.:format)      volunteers#new
+# edit_volunteer GET    /volunteers/:id/edit(.:format) volunteers#edit
+#      volunteer GET    /volunteers/:id(.:format)      volunteers#show
+#                PATCH  /volunteers/:id(.:format)      volunteers#update
+#                PUT    /volunteers/:id(.:format)      volunteers#update
+#                DELETE /volunteers/:id(.:format)      volunteers#destroy

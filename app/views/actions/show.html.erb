@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1><%= @action.name %> <small><%= @action.date %>, <%= @action.location %></small></h1>
+</div>
+
+<h4>Volunteers</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  <tbody>
+    <% @action.volunteers.each do |volunteer| %>
+      <tr>
+        <td><%= volunteer.name %></td>
+        <td><%= volunteer.email %></td>
+        <td><%= volunteer.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
