@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: volunteer_manager_development
+
+test:
+  <<: *default
+  database: volunteer_manager_test
