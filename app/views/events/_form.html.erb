@@ -1,6 +1,6 @@
-<%= render("layouts/errors", :object => @action) %>
+<%= render("layouts/errors", :object => @event) %>
 
-<%= form_for(@action) do |f| %>
+<%= form_for(@event) do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name %>

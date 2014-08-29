@@ -5,15 +5,15 @@
 
 <div class="row">
   <div class="col-md-6">
-    <% @actions.each do |action| %>
+    <% @events.each do |event| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= link_to "#{action.name}", action_path(action) %></h3>
+          <h3 class="panel-title"><%= link_to "#{event.name}", event_path(event) %></h3>
         </div>
         <div class="panel-body">
-         <p>Date: <%= action.date %></p>
-         <p>Location: <%= action.location %></p>
-         <p><em>added <%= action.created_at %></em></p>
+         <p>Date: <%= event.date %></p>
+         <p>Location: <%= event.location %></p>
+         <p><em>added <%= event.created_at %></em></p>
         </div>
       </div>
     <% end %>
@@ -23,5 +23,5 @@
 </div>
 
 <div class="row organizer-menu">
-  <%= link_to "Add an action", new_action_path %>
+  <%= link_to "Add an event", new_event_path %>
 </div>

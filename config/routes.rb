@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
-  root :to => 'actions#index'
+  root :to => 'events#index'
 
-  resources :actions
+  resources :events
 
   resources :volunteers
 end
 
-# root GET    /                              actions#index
-#        actions GET    /actions(.:format)             actions#index
-#                POST   /actions(.:format)             actions#create
-#     new_action GET    /actions/new(.:format)         actions#new
-#    edit_action GET    /actions/:id/edit(.:format)    actions#edit
-#         action GET    /actions/:id(.:format)         actions#show
-#                PATCH  /actions/:id(.:format)         actions#update
-#                PUT    /actions/:id(.:format)         actions#update
-#                DELETE /actions/:id(.:format)         actions#destroy
+# events GET    /events(.:format)              events#index
+#                POST   /events(.:format)              events#create
+#      new_event GET    /events/new(.:format)          events#new
+#     edit_event GET    /events/:id/edit(.:format)     events#edit
+#          event GET    /events/:id(.:format)          events#show
+#                PATCH  /events/:id(.:format)          events#update
+#                PUT    /events/:id(.:format)          events#update
+#                DELETE /events/:id(.:format)          events#destroy
 #     volunteers GET    /volunteers(.:format)          volunteers#index
 #                POST   /volunteers(.:format)          volunteers#create
 #  new_volunteer GET    /volunteers/new(.:format)      volunteers#new

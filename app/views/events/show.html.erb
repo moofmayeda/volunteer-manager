@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><%= @action.name %> <small><%= @action.date %>, <%= @action.location %></small></h1>
+  <h1><%= @event.name %> <small><%= @event.date %>, <%= @event.location %></small></h1>
 </div>
 
 <h4>Volunteers</h4>
@@ -11,7 +11,7 @@
       <th>Phone</th>
     </tr>
   <tbody>
-    <% @action.volunteers.each do |volunteer| %>
+    <% @event.volunteers.each do |volunteer| %>
       <tr>
         <td><%= volunteer.name %></td>
         <td><%= volunteer.email %></td>
