@@ -8,7 +8,9 @@
     <% @events.each do |event| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= link_to "#{event.name}", event_path(event) %></h3>
+          <h3 class="panel-title"><%= link_to "#{event.name}", event_path(event) %>
+            <span class='badge pull-right'><%= event.vol_num %> vols</span>
+          </h3>
         </div>
         <div class="panel-body">
          <p>Date: <%= event.date %></p>

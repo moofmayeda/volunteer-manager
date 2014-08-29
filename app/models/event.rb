@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
   def full_name
     "#{name}, #{date}, #{location}"
   end
+
+  def vol_num
+    self.volunteers.count
+  end
 end
