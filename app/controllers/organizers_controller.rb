@@ -7,6 +7,7 @@ class OrganizersController < ApplicationController
   def create
     @organizer = Organizer.new(organizer_params)
     if @organizer.save
+      session[:organizer_id] = @organizer.id
       flash[:notice] = "Welcome to the team!"
       redirect_to events_path
     else
