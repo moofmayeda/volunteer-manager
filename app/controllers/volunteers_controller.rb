@@ -1,4 +1,6 @@
 class VolunteersController < ApplicationController
+  before_filter :authorize, only: [:index, :destroy]
+
   def index
     @volunteers = Volunteer.all
   end
