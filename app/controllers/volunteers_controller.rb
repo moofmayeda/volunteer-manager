@@ -10,6 +10,7 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(volunteer_params)
     if @volunteer.save
+      @volunteer.event_ids = params[:volunteer][:event_ids]
       flash[:notice] = "Successfully registered."
       redirect_to volunteer_path(@volunteer)
     else
@@ -24,6 +25,7 @@ class VolunteersController < ApplicationController
   def update
     @volunteer = Volunteer.find(params[:id])
     if @volunteer.update(volunteer_params)
+      @volunteer.event_ids = params[:volunteer][:event_ids]
       flash[:notice] = "Successfully updated."
       redirect_to volunteer_path(@volunteer)
     else
