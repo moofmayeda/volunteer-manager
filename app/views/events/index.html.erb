@@ -1,11 +1,16 @@
 <div class="jumbotron">
   <h1>Welcome volunteers and organizers!</h1>
   <p>Check out the volunteer opportunities we have to offer.
-    <%= link_to "Organizer Sign-in", new_session_path, class: "btn btn-warning pull-right" %>
-    <%= link_to "New Organizer", new_organizer_path, class: "btn btn-info pull-right" %>
-    <%= link_to "New Volunteer", new_volunteer_path, class: "btn btn-primary pull-right" %>
+    <% if current_organizer %>
+      <%= link_to "Add Event", new_event_path, class: "btn btn-success pull-right" %>
+    <% else %>
+      <%= link_to "Organizer Sign-in", new_session_path, class: "btn btn-warning pull-right" %>
+      <%= link_to "New Organizer", new_organizer_path, class: "btn btn-info pull-right" %>
+    <% end %>
+      <%= link_to "New Volunteer", new_volunteer_path, class: "btn btn-primary pull-right" %>
   </p>
 </div>
+
 
 <div class="row">
   <div class="col-md-4">
@@ -40,6 +45,3 @@
   </div>
 </div>
 
-<div class="row organizer-menu">
-  <%= link_to "Add an event", new_event_path %>
-</div>
