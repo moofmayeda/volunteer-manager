@@ -35,6 +35,7 @@ class VolunteersController < ApplicationController
 
   def destroy
     @volunteer = Volunteer.find(params[:id])
+    @volunteer.events.destroy_all
     @volunteer.destroy
     redirect_to volunteers_path
   end
