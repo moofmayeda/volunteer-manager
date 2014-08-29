@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events
   resources :organizers
   resources :volunteers
+  resources :sessions, only: [:new, :create, :destroy]
 end
 
 # events GET    /events(.:format)              events#index
