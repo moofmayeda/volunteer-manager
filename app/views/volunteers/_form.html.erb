@@ -1,0 +1,17 @@
+<%= render("layouts/errors", :object => @volunteer) %>
+
+<%= form_for(@volunteer) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

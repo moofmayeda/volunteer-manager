@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1>Volunteers</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  <tbody>
+    <% @volunteers.each do |volunteer| %>
+      <tr>
+        <td><%= link_to "#{volunteer.name}", volunteer_path(volunteer) %></td>
+        <td><%= volunteer.email %></td>
+        <td><%= volunteer.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
