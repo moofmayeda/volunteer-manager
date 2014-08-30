@@ -17,7 +17,11 @@
     <% @events.each do |event| %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= link_to "#{event.name}", event_path(event) %>
+          <h3 class="panel-title">
+            <% if event.recent %>
+              <span class="label label-warning">New</span>
+            <% end %>
+            <%= link_to "#{event.name}", event_path(event) %>
             <span class='badge pull-right'><%= event.vol_num %> vols</span>
           </h3>
         </div>

@@ -9,4 +9,8 @@ class Event < ActiveRecord::Base
   def vol_num
     self.volunteers.count
   end
+
+  def recent
+    self.created_at > (Time.new - 2*24*60*60)? true : false
+  end
 end
