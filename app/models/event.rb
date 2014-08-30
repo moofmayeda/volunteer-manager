@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_and_belongs_to_many :volunteers, :join_table => :signups
   validates :name, :presence => true
+  validates :date, :presence => true
 
   def self.future
     self.where("date > ?", Time.new)

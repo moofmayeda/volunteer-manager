@@ -14,7 +14,8 @@
 
 <div class="row">
   <div class="col-md-4">
-    <% @events.each do |event| %>
+    <h4>Upcoming Opportunities</h4>
+    <% @events.future.each do |event| %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -34,12 +35,29 @@
     <% end %>
   </div>
   <div class="col-md-4">
+    <h4>Past Events</h4>
+    <% @events.past.each do |event| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <% if event.recent %>
+              <span class="label label-warning">New</span>
+            <% end %>
+            <%= link_to "#{event.name}", event_path(event) %>
+            <span class='badge pull-right'><%= event.vol_num %> vols</span>
+          </h3>
+        </div>
+        <div class="panel-body">
+         <p>Date: <%= event.date %></p>
+         <p>Location: <%= event.location %></p>
+         <p><em>added <%= event.created_at %></em></p>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div class="col-md-4">
+    <h4>Our Volunteers</h4>
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Volunteers</h3>
-      </div>
       <div class="panel-body">
         <% @volunteers.each do |volunteer| %>
           <p><%= link_to "#{volunteer.name}", volunteer_path(volunteer) %></p>
