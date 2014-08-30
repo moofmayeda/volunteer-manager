@@ -24,4 +24,12 @@ describe Event do
       expect(Event.future).to eq [future_event]
     end
   end
+
+  describe ".past" do
+    it "returns only events in the past" do
+      future_event = Event.create(name: "future event", date: "2014-12-12")
+      past_event = Event.create(name: "past event", date: "2014-07-12")
+      expect(Event.past).to eq [past_event]
+    end
+  end
 end

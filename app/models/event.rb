@@ -6,6 +6,10 @@ class Event < ActiveRecord::Base
     self.where("date > ?", Time.new)
   end
 
+  def self.past
+    self.where("date <= ?", Time.new)
+  end
+
   def full_name
     "#{name}, #{date}, #{location}"
   end
