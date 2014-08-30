@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
+      @event.volunteers << Volunteer.find(params[:event][:volunteer_ids].first)
       flash[:notice] = "Event updated!"
       redirect_to event_path(@event)
     else
