@@ -12,7 +12,7 @@
   <tbody>
     <% @volunteers.each do |volunteer| %>
       <tr>
-        <td><%= link_to "#{volunteer.name}", volunteer_path(volunteer) %></td>
+        <td><%= link_to "#{volunteer.name} <span class='badge'>#{volunteer.event_num}</span>".html_safe, volunteer_path(volunteer) %></td>
         <td><%= volunteer.email %></td>
         <td><%= volunteer.phone %></td>
       </tr>
