@@ -13,7 +13,9 @@ describe "updating an event" do
     fill_in 'Location', :with => 'union HQ'
     click_button 'Create Event'
     fill_in 'Name', :with => 'phone bank pizza party'
-    click_button 'Update Event'
+    within(".edit-event") do
+      click_on('Update Event')
+    end
     expect(page).to have_content 'phone bank pizza party'
   end
 end
