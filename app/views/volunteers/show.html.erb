@@ -13,7 +13,7 @@
   <tbody>
     <% @volunteer.events.each do |event| %>
       <tr>
-        <td><%= link_to "#{event.name}", event_path(event) %></td>
+        <td><%= link_to event.name, event_path(event) %></td>
         <td><%= event.date %></td>
         <td><%= event.location %></td>
       </tr>

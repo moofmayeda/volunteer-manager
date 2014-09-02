@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
     "#{name}, #{date}, #{location}"
   end
 
-  def vol_num
+  def vol_count
     self.volunteers.count
   end
 

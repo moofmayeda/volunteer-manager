@@ -22,8 +22,8 @@
             <% if event.recent %>
               <span class="label label-warning">New</span>
             <% end %>
-            <%= link_to "#{event.name}", event_path(event) %>
-            <span class='badge pull-right'><%= event.vol_num %> vols</span>
+            <%= link_to event.name, event_path(event) %>
+            <span class='badge pull-right'><%= event.vol_count %> vols</span>
           </h3>
         </div>
         <div class="panel-body">
@@ -43,8 +43,8 @@
             <% if event.recent %>
               <span class="label label-warning">New</span>
             <% end %>
-            <%= link_to "#{event.name}", event_path(event) %>
-            <span class='badge pull-right'><%= event.vol_num %> vols</span>
+            <%= link_to event.name, event_path(event) %>
+            <span class='badge pull-right'><%= event.vol_count %> vols</span>
           </h3>
         </div>
         <div class="panel-body">
